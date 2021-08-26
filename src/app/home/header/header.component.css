@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+mat-toolbar {
+  background-color: rgb(94, 91, 91);
+}
+
+.bgButton:hover {
+  background-color:#4e4b4b;
+}
+
+.spacer {
+   flex: 1 1 auto;
+}
