@@ -31,7 +31,6 @@ export class CreateCourseComponent implements OnInit {
   ngOnInit(): void {}
 
   registerCourse() {
-    console.log(!this.registerData.name);
 
     if (!this.registerData.name || !this.registerData.description) {
       this.message = 'Failed: There are empty fields';
@@ -41,7 +40,7 @@ export class CreateCourseComponent implements OnInit {
       this._courseService.registerUser(this.registerData).subscribe(
         (res) => {
           console.log(res);
-          this._router.navigate(['/createClass']);
+          //this._router.navigate(['/createClass']);
           this.message = 'Courser register successfull';
           this.openSnackBarSuccessful();
           this.registerData = {};

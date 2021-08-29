@@ -8,24 +8,21 @@
         
         <mat-card-content>
           <div class="container">
-            <mat-form-field>
-              <input
-                type="text"
-                [(ngModel)]="registerData.className"
-                matInput
-                placeholder="Cousre Name"
-                required
-              />
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select Course</mat-label>
+              <mat-select [(ngModel)]="registerData.className">
+                <mat-option *ngFor="let course of courses.course" value="{{course._id}}">{{course.name}}</mat-option>
+              </mat-select>
             </mat-form-field>
-            <mat-form-field>
-              <input
-                type="text"
-                [(ngModel)]="registerData.classTeacher"
-                matInput
-                placeholder="Class Teacher"
-                required
-              />
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select Teacher</mat-label>
+              <mat-select [(ngModel)]="registerData.classTeacher">
+                <mat-option *ngFor="let teacher of teachers.teacher" value="{{teacher._id}}">{{teacher.name}}</mat-option>
+              </mat-select>
             </mat-form-field>
+
             <mat-form-field>
               <input
                 type="number"
@@ -69,6 +66,7 @@
             <button mat-button 
             mat-raised-button
             class="button bgButton"
+            (click)="registerClass()"
             >
             Register
           </button>            

@@ -18,4 +18,7 @@ export class CourseService {
   registerUser (course: any) {
     return this._http.post<any>(this.env + 'course/createCourse', course);
   }
+  listCourse(course?: any){
+    return this._http.get<any>(this.env + "course/listCourse", course);
+  };
 }

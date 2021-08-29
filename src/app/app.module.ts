@@ -18,6 +18,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
 //services
 import { ClassService } from '../app/services/class.service';
 import { CourseService } from '../app/services/course.service';
@@ -28,7 +31,7 @@ import { TokenInterceptorService } from '../app/services/token-interceptor.servi
 //guard
 import { AuthGuard } from './guards/auth.guard';
 
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,8 @@ import { HttpClientModule } from "@angular/common/http";
     MatSidenavModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [
     ClassService,

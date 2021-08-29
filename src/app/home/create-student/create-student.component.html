@@ -26,15 +26,17 @@
                 required
               />
             </mat-form-field>
-            <mat-form-field>
-              <input
-                type="text"
-                [(ngModel)]="registerData.careerId"
-                matInput
-                placeholder="Type the career"
-                required
-              />
+
+            <mat-form-field appearance="fill">
+              <mat-label>Select Class</mat-label>
+              <mat-select [(ngModel)]="registerData.className">
+                <mat-option *ngFor="let class of classes.classInstitute" value="{{class._id}}">
+                  {{class.className.name}} - {{class.classTeacher.name}}
+                </mat-option>
+              </mat-select>
+              <mat-hint align="end">This field is so important</mat-hint>
             </mat-form-field>
+
             <mat-form-field>
               <input
                 type="date"
@@ -51,6 +53,7 @@
             <button mat-button 
             mat-raised-button
             class="button bgButton"
+            (click)="registerStudent()"
             >
             Register
           </button>            
